@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)http://127.0.0.1:5500/Buoi_7/LienHe.html -->
+<html lang="vi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Homebank - Đăng ký</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fff;
+      }
+
+      .header {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .header img {
+        width: 20%;
+        height: 160px;
+        display: block;
+      }
+
+      .nav {
+        background-color: #0000cc;
+        padding: 5px 20px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .nav a:hover {
+        color: #ff0;
+        text-decoration: underline;
+      }
+
+      .nav a:active {
+        color: #f0f;
+      }
+
+      .container {
+        display: flex;
+      }
+
+      .left {
+        width: 250px;
+        padding: 10px;
+        background-image: url("/Buoi_7/img/nen_trai.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+      }
+
+      .right {
+        width: 250px;
+        padding: 10px;
+        background-image: url("/Buoi_7/img/nen_phai.gif");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top;
+      }
+
+      .center {
+        flex-grow: 1;
+        padding: 10px;
+        background: #fff;
+      }
+
+      .menu-img {
+        width: 100%;
+        display: block;
+        margin-bottom: 8px;
+        transition: filter 0.3s ease;
+      }
+
+      .menu-img:hover {
+        filter: grayscale(100%);
+      }
+
+      .left img,
+      .right img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .right .atm {
+        animation: atmBlink 1s infinite alternate;
+      }
+
+      @keyframes atmBlink {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.5;
+        }
+      }
+
+      .marquee {
+        background-color: #000;
+        color: #0f0;
+        padding: 5px 10px;
+        font-weight: bold;
+        overflow: hidden;
+        white-space: nowrap;
+        margin-bottom: 10px;
+      }
+
+      .marquee-text {
+        display: inline-block;
+        animation: scroll 15s linear infinite;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      /* Form đăng ký */
+      .form-section {
+        margin-bottom: 20px;
+      }
+
+      .form-header {
+        background-color: #a7c7f2;
+        color: black;
+        padding: 5px 10px;
+        font-weight: bold;
+        width: 95%;
+        margin-bottom: 5px;
+      }
+
+      .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+
+      .form-label {
+        width: 160px;
+        font-size: 14px;
+      }
+
+      .form-input input[type="text"],
+      .form-input input[type="email"],
+      .form-input input[type="password"],
+      .form-input select {
+        width: 250px;
+        padding: 4px;
+        font-size: 14px;
+      }
+
+      .checkbox-group {
+        margin-left: 160px;
+        font-size: 14px;
+      }
+
+      .checkbox-group label {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      textarea {
+        width: 100%;
+        height: 100px;
+        margin-top: 5px;
+      }
+
+      .form-buttons {
+        text-align: right;
+        margin-top: 10px;
+      }
+
+      .form-buttons input {
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+    </style>
+  <style>.--savior-overlay-transform-reset {
+  transform: none !important;
+}
+.--savior-overlay-z-index-top {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-position-relative {
+  position: relative;
+}
+.--savior-overlay-position-static {
+  position: static !important;
+}
+.--savior-overlay-overflow-hidden {
+  overflow: hidden !important;
+}
+.--savior-overlay-overflow-x-visible {
+  overflow-x: visible !important;
+}
+.--savior-overlay-overflow-y-visible {
+  overflow-y: visible !important;
+}
+.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.--savior-overlay-display-none {
+  display: none !important;
+}
+.--savior-overlay-clearfix {
+  clear: both;
+}
+.--savior-overlay-reset-filter {
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+.--savior-tooltip-host {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
+/*Override css styles for Twitch.tv*/
+main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.modal__backdrop.--savior-overlay-z-index-reset {
+  position: static !important;
+}
+main.--savior-overlay-z-index-top {
+  z-index: auto !important;
+}
+main.--savior-overlay-z-index-top .channel-root__player-container + div,
+main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
+  opacity: 0.1;
+}
+/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+.--savior-backdrop {
+  position: fixed !important;
+  z-index: 2147483642 !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw !important;
+  background-color: rgba(0,0,0,0.9);
+}
+.--savior-overlay-twitter-video-player {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
+.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
+.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
+.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
+.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
+.--savior-overlay-z-index-reset header[role="banner"],
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
+  z-index: -1 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-z-index-reset#mtLayer,
+.--savior-overlay-z-index-reset.media-layer {
+  z-index: 3000 !important;
+}
+.--savior-overlay-position-relative [class*="SecBar_secBar_"],
+.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
+.--savior-overlay-position-relative [class*="Main_side_"] {
+  z-index: -1 !important;
+}
+/* Fix conflict css with zingmp3 */
+.zm-video-modal.--savior-overlay-z-index-reset {
+  position: absolute;
+}
+/* Dirty hack for xvideos99 */
+#page #main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+/* Overlay for ok.ru */
+#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+  overflow-y: hidden;
+  z-index: 2147483643 !important;
+}
+/* Fix missing controller for tv.naver.com */
+.--savior-overlay-z-index-top.rmc_controller,
+.--savior-overlay-z-index-top.rmc_setting_intro,
+.--savior-overlay-z-index-top.rmc_highlight,
+.--savior-overlay-z-index-top.rmc_control_settings {
+  z-index: 2147483644 !important;
+}
+/* Dirty hack for douyi.com */
+.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+  display: none;
+}
+.videoWrap + div > div {
+  pointer-events: unset;
+}
+/* Dirty hack for fpt.ai */
+.mfp-wrap.--savior-overlay-z-index-top {
+  position: relative;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+  display: none;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
+  z-index: -1 !important;
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
+  position: relative;
+}
+.watching-movie #video-player.--savior-overlay-z-index-top {
+  z-index: 2147483644 !important;
+}
+div[class^="tiktok"].--savior-overlay-z-index-reset {
+  z-index: 2147483644 !important;
+}
+.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
+.--savior-lightoff-fix section.section_video ~ section {
+  z-index: -1;
+  position: relative;
+}
+.--savior-lightoff-fix header,
+.--savior-lightoff-fix footer,
+.--savior-lightoff-fix .top-header,
+.--savior-lightoff-fix .swiper-container,
+.--savior-lightoff-fix #to_top,
+.--savior-lightoff-fix #button-adblock {
+  z-index: -1 !important;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style>
+<style>.--savior-overlay-transform-reset {
+  transform: none !important;
+}
+.--savior-overlay-z-index-top {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-position-relative {
+  position: relative;
+}
+.--savior-overlay-position-static {
+  position: static !important;
+}
+.--savior-overlay-overflow-hidden {
+  overflow: hidden !important;
+}
+.--savior-overlay-overflow-x-visible {
+  overflow-x: visible !important;
+}
+.--savior-overlay-overflow-y-visible {
+  overflow-y: visible !important;
+}
+.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.--savior-overlay-display-none {
+  display: none !important;
+}
+.--savior-overlay-clearfix {
+  clear: both;
+}
+.--savior-overlay-reset-filter {
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+.--savior-tooltip-host {
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
+/*Override css styles for Twitch.tv*/
+main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+.modal__backdrop.--savior-overlay-z-index-reset {
+  position: static !important;
+}
+main.--savior-overlay-z-index-top {
+  z-index: auto !important;
+}
+main.--savior-overlay-z-index-top .channel-root__player-container + div,
+main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
+  opacity: 0.1;
+}
+/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+.--savior-backdrop {
+  position: fixed !important;
+  z-index: 2147483642 !important;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw !important;
+  background-color: rgba(0,0,0,0.9);
+}
+.--savior-overlay-twitter-video-player {
+  position: fixed;
+  width: 80%;
+  height: 80%;
+  top: 10%;
+  left: 10%;
+}
+.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
+.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
+.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
+.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
+.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
+.--savior-overlay-z-index-reset header[role="banner"],
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
+.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
+  z-index: -1 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
+  z-index: 2147483643 !important;
+}
+.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-z-index-reset#mtLayer,
+.--savior-overlay-z-index-reset.media-layer {
+  z-index: 3000 !important;
+}
+.--savior-overlay-position-relative [class*="SecBar_secBar_"],
+.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
+  z-index: 0 !important;
+}
+.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
+.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
+.--savior-overlay-position-relative [class*="Main_side_"] {
+  z-index: -1 !important;
+}
+/* Fix conflict css with zingmp3 */
+.zm-video-modal.--savior-overlay-z-index-reset {
+  position: absolute;
+}
+/* Dirty hack for xvideos99 */
+#page #main.--savior-overlay-z-index-reset {
+  z-index: auto !important;
+}
+/* Overlay for ok.ru */
+#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+  overflow-y: hidden;
+  z-index: 2147483643 !important;
+}
+/* Fix missing controller for tv.naver.com */
+.--savior-overlay-z-index-top.rmc_controller,
+.--savior-overlay-z-index-top.rmc_setting_intro,
+.--savior-overlay-z-index-top.rmc_highlight,
+.--savior-overlay-z-index-top.rmc_control_settings {
+  z-index: 2147483644 !important;
+}
+/* Dirty hack for douyi.com */
+.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+  display: none;
+}
+.videoWrap + div > div {
+  pointer-events: unset;
+}
+/* Dirty hack for fpt.ai */
+.mfp-wrap.--savior-overlay-z-index-top {
+  position: relative;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+  display: none;
+}
+.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
+  z-index: -1 !important;
+}
+section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
+  position: relative;
+}
+.watching-movie #video-player.--savior-overlay-z-index-top {
+  z-index: 2147483644 !important;
+}
+div[class^="tiktok"].--savior-overlay-z-index-reset {
+  z-index: 2147483644 !important;
+}
+.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
+.--savior-lightoff-fix section.section_video ~ section {
+  z-index: -1;
+  position: relative;
+}
+.--savior-lightoff-fix header,
+.--savior-lightoff-fix footer,
+.--savior-lightoff-fix .top-header,
+.--savior-lightoff-fix .swiper-container,
+.--savior-lightoff-fix #to_top,
+.--savior-lightoff-fix #button-adblock {
+  z-index: -1 !important;
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+</style></head>
+
+  <body>
+    <div class="header">
+        <img src="./Homebank - Đăng ký_files/banner_01.jpg" alt="">
+        <img src="./Homebank - Đăng ký_files/banner_02.jpg">
+        <img src="./Homebank - Đăng ký_files/banner_03.jpg">
+        <img src="./Homebank - Đăng ký_files/banner_04.jpg">
+        <img src="./Homebank - Đăng ký_files/banner_05.jpg"> 
+    </div>
+
+    <div class="nav">
+        <a href="http://127.0.0.1:5500/Buoi_7/TrangChu.html">Trang chủ</a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#">Giới thiệu</a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#">Tin Tức</a>
+        <a href="http://127.0.0.1:5500/Buoi_7/DichVu.html">Dịch vụ</a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#">Khách hàng</a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html">Liên hệ</a>
+    </div>
+
+    <div class="container">
+      <div class="left">
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#"><img src="./Homebank - Đăng ký_files/tygia.gif" class="menu-img"></a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#"><img src="./Homebank - Đăng ký_files/ngan_hang_lienket.gif" class="menu-img"></a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#"><img src="./Homebank - Đăng ký_files/ngan_hang_dien_tu.gif" class="menu-img"></a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#"><img src="./Homebank - Đăng ký_files/lai_xuat.gif" class="menu-img"></a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#"><img src="./Homebank - Đăng ký_files/Mang_luoi.gif" class="menu-img"></a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#"><img src="./Homebank - Đăng ký_files/Dich_vu.gif" class="menu-img"></a>
+        <a href="http://127.0.0.1:5500/Buoi_7/LienHe.html#"><img src="./Homebank - Đăng ký_files/gop_y.gif" class="menu-img"></a>
+        <img src="./Homebank - Đăng ký_files/Dong_a.jpg">
+        <img src="./Homebank - Đăng ký_files/cam_on.jpg">
+      </div>
+
+      <div class="center">
+        <div class="marquee">
+          <span class="marquee-text">Lê Văn Chung-CD233667-Ứng Dụng Phần Mềm 1 K15</span>
+        </div>
+
+        <h3>Đăng ký:</h3>
+
+        <!-- Thông tin cần nhập -->
+        <div class="form-section">
+          <div class="form-header">Thông tin cần nhập</div>
+          <div class="form-row">
+            <div class="form-label">Tên tài khoản:</div>
+            <div class="form-input">
+              <input type="text"><br>Xin mời bạn nhập tài khoản muốn sử dụng
+              trên diễn đàn
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">Mật khẩu:</div>
+            <div class="form-input"><input type="password"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">Nhập lại mật khẩu:</div>
+            <div class="form-input">
+              <input type="password"><br>Chú ý: Mật khẩu có phân biệt chữ
+              HOA và chữ thường
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">Địa chỉ Email:</div>
+            <div class="form-input">
+              <input type="email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">Nhập lại Email:</div>
+            <div class="form-input">
+              <input type="email"><br>Xin mời nhập lại địa chỉ Email của bạn
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">Câu hỏi ngẫu nhiên:</div>
+            <div class="form-input">
+              <br>Bạn sinh ra ở đâu?<br>
+              <input type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Thông tin thêm -->
+        <div class="form-section">
+          <div class="form-header">Thông tin thêm</div>
+          <div class="form-row">
+            <div class="form-label">Người giới thiệu:</div>
+            <div class="form-input">
+              <input type="text"><br>Nếu bạn được giới thiệu bởi thành viên
+              trong diễn đàn ,xin hãy nhập tài khoản thành viên đó vào đây
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-label">Múi giờ:</div>
+            <div class="form-input">
+              <select>
+                <option>Múi giờ +7</option>
+              </select>
+            </div>
+          </div>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Nhận Email từ ban quản trị</label>
+            <label><input type="checkbox"> Nhận Email từ thành viên khác</label><br>Thỉnh thoảng ban quản trị có những thông báo tới các<br>
+            thành viên. Hãy chọn nhận email từ ban quản trị để<br>
+            nhận được những thông tin một cách nhanh nhất
+          </div>
+        </div>
+
+        <!-- Nội quy -->
+        <div class="form-section">
+          <div class="form-header">Nội quy - quy định</div>
+          <textarea>            Nội quy--Registration to this forum is free! We do insist...</textarea>
+          <div class="checkbox-group">
+            <label><input type="checkbox"> Tôi đã đọc và đồng ý với các điều khoản
+              diễn đàn</label>
+          </div>
+          <div class="form-buttons">
+            <input type="submit" value="Hoàn tất đăng ký">
+            <input type="reset" value="Nhập lại">
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <img src="./Homebank - Đăng ký_files/phat_hanh_ATM.jpg">
+        <img src="./Homebank - Đăng ký_files/ATM.jpg">
+        <img src="./Homebank - Đăng ký_files/cophieu.jpg"> 
+        <img src="./Homebank - Đăng ký_files/cophieu.jpg">
+      </div>
+    </div>
+  
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+<savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"></en2vi-host><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"></savior-host></body><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"><template shadowrootmode="open"><style>@import "chrome-extension://jdfkmiabjpfjacifcmihfdjhpnjpiick/css/content-script.css";
+</style><div class="body"></div></template></savior-host><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"><template shadowrootmode="open"><style>@import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/common.css";
+@import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/style.css";</style><style id="svelte-1dp9t6n">.toast-container.svelte-1dp9t6n{position:fixed;pointer-events:none;width:100%;height:100%;display:flex;flex-direction:column-reverse;align-items:center;z-index:1000;bottom:0;padding:16px;gap:8px}</style>   <div class="toast-container svelte-1dp9t6n"></div></template></en2vi-host><savior-host style="all: unset; position: absolute; top: 0; left: 0; z-index: 99999999999999; display: block !important; overflow: unset"><template shadowrootmode="open"><style>@import "chrome-extension://jdfkmiabjpfjacifcmihfdjhpnjpiick/css/content-script.css";
+</style><div class="body"><div class="turn-lights-overlay"></div><toasts id="toasts-container"></toasts></div></template></savior-host></html>
